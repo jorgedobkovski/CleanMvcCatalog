@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="CleanMvcCatalog.Application/CleanMvcCatalog.Application.csproj" />
+  <Project Path="CleanMvcCatalog.Domain/CleanMvcCatalog.Domain.csproj" />
+  <Project Path="CleanMvcCatalog.Infra.Data/CleanMvcCatalog.Infra.Data.csproj" />
+  <Project Path="CleanMvcCatalog.Infra.IoC/CleanMvcCatalog.Infra.IoC.csproj" />
+  <Project Path="CleanMvcCatalog.WebUI/CleanMvcCatalog.WebUI.csproj" />
+</Solution>
