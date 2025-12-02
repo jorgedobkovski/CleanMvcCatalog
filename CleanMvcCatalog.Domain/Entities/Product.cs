@@ -39,8 +39,8 @@ namespace CleanMvcCatalog.Domain.Entities
         {
             DomainExceptionValidation.When(string.IsNullOrEmpty(name),
                 "Invalid name. Name is required");
-            DomainExceptionValidation.When(name.Length < 3,
-                "Invalid name. Name is too short, minimum 3 characters");
+            DomainExceptionValidation.When(name.Length < 4,
+                "Invalid name. Name is too short, minimum 4 characters");
             DomainExceptionValidation.When(string.IsNullOrEmpty(description),
                 "Invalid description. Description is required");
             DomainExceptionValidation.When(description.Length < 5,
