@@ -24,7 +24,7 @@ namespace CleanMvcCatalog.Infra.IoC
 
             services.AddScoped<IProductService, ProductService>();
             services.AddScoped<ICategoryService, CategoryService>();
-            services.AddAutoMapper(typeof(DomainToDtoMappingProfile));
+            services.AddAutoMapper(cfg => { }, typeof(DomainToDtoMappingProfile));
 
             return services;
         }
