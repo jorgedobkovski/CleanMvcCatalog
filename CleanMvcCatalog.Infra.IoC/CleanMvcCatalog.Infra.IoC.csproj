@@ -7,11 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="16.0.0" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="10.0.0" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="10.0.0" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CleanMvcCatalog.Application\CleanMvcCatalog.Application.csproj" />
     <ProjectReference Include="..\CleanMvcCatalog.Domain\CleanMvcCatalog.Domain.csproj" />
     <ProjectReference Include="..\CleanMvcCatalog.Infra.Data\CleanMvcCatalog.Infra.Data.csproj" />
   </ItemGroup>

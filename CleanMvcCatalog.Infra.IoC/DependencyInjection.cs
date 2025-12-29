@@ -1,4 +1,7 @@
-﻿using CleanMvcCatalog.Domain.Interfaces;
+﻿using CleanMvcCatalog.Application.Interfaces;
+using CleanMvcCatalog.Application.Mappings;
+using CleanMvcCatalog.Application.Services;
+using CleanMvcCatalog.Domain.Interfaces;
 using CleanMvcCatalog.Infra.Data.Context;
 using CleanMvcCatalog.Infra.Data.Repositories;
 using Microsoft.EntityFrameworkCore;
@@ -18,6 +21,10 @@ namespace CleanMvcCatalog.Infra.IoC
 
             services.AddScoped<ICategoryRepository, CategoryRepository>();
             services.AddScoped<IProductRepository, ProductRepository>();
+
+            services.AddScoped<IProductService, ProductService>();
+            services.AddScoped<ICategoryService, CategoryService>();
+            services.AddAutoMapper(typeof(DomainToDtoMappingProfile));
 
             return services;
         }
