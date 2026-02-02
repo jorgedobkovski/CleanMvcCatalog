@@ -13,8 +13,8 @@ namespace CleanMvcCatalog.Domain.Entities
         public int Stock { get; private set; }
         public string Image { get; private set; } = string.Empty;
 
-        public int CategoryId { get; private set; }
-        public Category? Category { get; private set; }
+        public int CategoryId { get; set; }
+        public Category? Category { get; set; }
 
         public Product(string name, string description, decimal price, int stock, string image)
         {
