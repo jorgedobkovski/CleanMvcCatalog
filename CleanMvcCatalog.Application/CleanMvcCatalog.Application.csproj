@@ -15,8 +15,4 @@
     <ProjectReference Include="..\CleanMvcCatalog.Domain\CleanMvcCatalog.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Products\Handlers\" />
-  </ItemGroup>
-
 </Project>
