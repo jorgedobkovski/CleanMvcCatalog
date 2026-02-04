@@ -27,14 +27,15 @@ namespace CleanMvcCatalog.Application.Products.Handlers
                 request.Image
             );
 
-            if(product == null)
+            if (product == null)
             {
                 throw new ApplicationException("Error creating entity");
-            }else
+            }
+            else
             {
                 product.CategoryId = request.CategoryId;
                 return await _productRepository.CreateAsync(product);
             }
-
+        }
     }
 }

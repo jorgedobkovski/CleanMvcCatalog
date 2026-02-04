@@ -26,6 +26,9 @@ namespace CleanMvcCatalog.Infra.IoC
             services.AddScoped<ICategoryService, CategoryService>();
             services.AddAutoMapper(cfg => { }, typeof(DomainToDtoMappingProfile));
 
+            var myhandlers = AppDomain.CurrentDomain.Load("CleanMvcCatalog.Application");
+            services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(myhandlers));
+
             return services;
         }
     }
