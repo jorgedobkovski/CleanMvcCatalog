@@ -41,19 +41,7 @@ namespace CleanMvcCatalog.Application.Services
 
             return _mapper.Map<ProductDto>(result);
         }
-
-        public async Task<ProductDto> GetProductCategory(int? id)
-        {
-            var productByIdQuery = new GetProductByIdQuery(id.Value);
-
-            if(productByIdQuery == null)
-                throw new Exception("Product not found");
-
-            var result = await _mediator.Send(productByIdQuery);
-
-            return _mapper.Map<ProductDto>(result);
-        }
-
+        
         public async Task Add(ProductDto productDto)
         {
             var productCreateCommand = _mapper.Map<ProductCreateCommand>(productDto);
