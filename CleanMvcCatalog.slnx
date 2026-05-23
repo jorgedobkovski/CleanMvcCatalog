@@ -1,4 +1,5 @@
 <Solution>
+  <Project Path="CleanMvcCatalog.API/CleanMvcCatalog.API.csproj" Id="87fd5206-f21a-4104-95a8-802d6e14d0b1" />
   <Project Path="CleanMvcCatalog.Application/CleanMvcCatalog.Application.csproj" />
   <Project Path="CleanMvcCatalog.Domain.Tests/CleanMvcCatalog.Domain.Tests.csproj" />
   <Project Path="CleanMvcCatalog.Domain/CleanMvcCatalog.Domain.csproj" />

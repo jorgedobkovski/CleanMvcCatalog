@@ -10,7 +10,7 @@ namespace CleanMvcCatalog.Infra.Data.Repositories
 {
     public class CategoryRepository : ICategoryRepository
     {
-        private ApplicationDbContext _categoryContext;
+        private readonly ApplicationDbContext _categoryContext;
         public CategoryRepository(ApplicationDbContext context)
         {
             _categoryContext = context;
@@ -31,11 +31,6 @@ namespace CleanMvcCatalog.Infra.Data.Repositories
         public async Task<IEnumerable<Category>> GetCategories()
         {
             return await _categoryContext.Categories.ToListAsync();
-        }
-
-        public Task<IEnumerable<Category>> GetCatories()
-        {
-            throw new NotImplementedException();
         }
 
         public async Task<Category> Remove(Category category)
