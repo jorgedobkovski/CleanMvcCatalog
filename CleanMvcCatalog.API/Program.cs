@@ -2,6 +2,7 @@ using CleanMvcCatalog.Infra.IoC;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection; // Garante o escopo correto dos métodos de extensão
 using Microsoft.Extensions.Hosting;
+using Microsoft.OpenApi;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddCors(options =>
@@ -16,14 +17,13 @@ builder.Services.AddCors(options =>
 // 1. Adiciona os serviços essenciais
 builder.Services.AddControllers();
 builder.Services.AddInfrastructureAPI(builder.Configuration);
+builder.Services.AddInfrastructureJwt(builder.Configuration);
+builder.Services.AddInfrastructureSwagger();
 
 // 2. Configura o Gerador do Swagger (Swashbuckle)
 // Removeu-se o builder.Services.AddOpenApi() para evitar o conflito
 builder.Services.AddEndpointsApiExplorer(); // Necessário para o Swagger mapear as rotas dos Controllers
-builder.Services.AddSwaggerGen(c =>
-{
-    c.SwaggerDoc("v1", new() { Title = "CleanMvcCatalog.API", Version = "v1" });
-});
+
 
 var app = builder.Build();
 
@@ -44,9 +44,12 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.UseCors("DevelopmentCors");
 
+app.UseStatusCodePages();
+app.UseRouting();
+app.UseAuthentication();
 app.UseAuthorization();
+app.UseCors("DevelopmentCors");
 
 app.MapControllers();
 
